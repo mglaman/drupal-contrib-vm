@@ -14,10 +14,10 @@ reset_makefile() {
 
 case $1 in
   "rebuild_commerce")
-    reset_makefile ./makes/commerce.make.yml commerce
+    reset_makefile commerce.make.yml commerce
     ;;
   "rebuild_panels")
-    reset_makefile ./makes/panels.make.yml panelsverse
+    reset_makefile panels.make.yml panelsverse
     ;;
   "")
     echo "Try ./tasks rebuild_commerce"
