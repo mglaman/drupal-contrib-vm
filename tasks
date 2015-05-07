@@ -1,0 +1,25 @@
+#!/bin/bash
+
+
+reset_makefile() {
+  makefile=$1
+  siteDir=$2
+
+  echo -e "\033[1mRemoving existing site\033[0m"
+  sudo rm -rf sites/${siteDir}
+
+  echo -e "\033[1mBuilding Make\033[0m"
+  drush make --prepare-install --working-copy --no-gitinfofile --no-cache makes/${makefile} sites/${siteDir}
+}
+
+case $1 in
+  "rebuild_commerce")
+    reset_makefile ./makes/commerce.make.yml commerce
+    ;;
+  "rebuild_panels")
+    reset_makefile ./makes/panels.make.yml panelsverse
+    ;;
+  "")
+    echo "Try ./tasks rebuild_commerce"
+    ;;
+esac
