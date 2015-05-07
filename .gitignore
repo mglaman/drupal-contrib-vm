@@ -1,0 +1,17 @@
+# Ex: projects being worked on kept in same folder, such as modules maintained.
+libraries/*
+modules/*
+themes/*
+
+# We want to utilize build scripts for fresh projects
+profiles/*
+!profiles/empty
+sites/*
+!sites/empty
+
+# Junk files.
+.settings/*
+.vagrant/*
+.buildpath
+.project
+.DS_Store

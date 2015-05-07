@@ -1,0 +1,15 @@
+---
+mysql_databases:
+  - { name: demo }
+  - { name: d7 }
+  - { name: ck2 }
+  - { name: commercedeploy }
+  - { name: panelsverse }
+  - { name: panopoly }
+
+apache_vhosts:
+  - {servername: "drupal7.contrib.dev", documentroot: "/var/www/drupal7"}
+  - {servername: "ck2.contrib.dev", documentroot: "/var/www/ck2"}
+  - {servername: "commercedeploy.contrib.dev", documentroot: "/var/www/commercedeploy"}
+  - {servername: "panelsverse.contrib.dev", documentroot: "/var/www/panelsverse"}
+  - {servername: "panopoly.contrib.dev", documentroot: "/var/www/panopoly"}

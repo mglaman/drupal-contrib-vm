@@ -1,0 +1,15 @@
+# Setup/install tasks.
+- include: setup-RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- include: setup-Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: Create directory for selenium
+  shell: mkdir -p {{ selenium_dir }} creates={{ selenium_dir }}
+
+- name: Download Selenium
+  get_url: url={{ selenium_url }} dest={{ selenium_dir }}/selenium-server
+
+- name: Selenium start script
+  template: src="run-selenium.j2" dest="/home/vagrant/run-selenium" owner="vagrant" group="vagrant" mode="644"

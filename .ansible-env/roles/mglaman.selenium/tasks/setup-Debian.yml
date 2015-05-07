@@ -1,0 +1,18 @@
+---
+- name: Update apt cache.
+  apt: update_cache=yes cache_valid_time=86400
+
+- name: Ensure JDK present.
+  apt:
+    name: "openjdk-7-jre-headless"
+    state: installed
+
+- name: Ensure FireFox
+  apt:
+    name: "firefox"
+    state: installed
+
+- name: Ensure headless display
+  apt:
+    name: "xvfb"
+    state: installed

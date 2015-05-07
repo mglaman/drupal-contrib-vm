@@ -1,0 +1,192 @@
+api: 2
+core: 7.x
+projects:
+  drupal:
+    type: "core"
+  # Contrib requirements.
+  addressfield:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  charts:
+    download:
+      type: "git"
+      branch: "7.x-2.x"
+  ctools:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  date:
+    download:
+      type: "git"
+      branch: "7.x-2.x"
+  entity:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  entityreference:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  eva:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  inline_conditions:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  inline_entity_form:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  libraries:
+    download:
+      type: "git"
+      branch: "7.x-2.x"
+  message:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  message_notify:
+    download:
+      type: "git"
+      branch: "7.x-2.x"
+  physical:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  rules:
+    download:
+      type: "git"
+      branch: "7.x-2.x"
+  token:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  views:
+    download:
+      type: "git"
+      branch: "7.x-3.x"
+  views_data_export:
+    download:
+      type: "git"
+      branch: "7.x-3.x"
+  views_date_format_sql:
+    download:
+      type: "git"
+      branch: "7.x-3.x"
+  views_megarow:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  # Commerce core.
+  commerce:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  # Payment Modules.
+  commerce_authnet:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  commerce_paypal:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  commerce_stripe:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  # Recurring Family
+  commerce_cardonfile:
+    download:
+      type: "git"
+      branch: "7.x-2.x"
+  commerce_recurring:
+    download:
+      type: "git"
+      branch: "7.x-2.x"
+  # Commerce promotional contrib
+  commerce_coupon:
+    download:
+      type: "git"
+      branch: "7.x-2.x"
+  commerce_discount:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  commerce_discount_extra:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  commerce_discount_product_category:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  # Commerce shipping
+  commerce_shipping:
+    download:
+      type: "git"
+      branch: "7.x-2.x"
+  commerce_physical:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  commerce_flat_rate:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  # Commerce MIsc
+  commerce_backoffice:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  commerce_reports:
+    download:
+      type: "git"
+      branch: "7.x-4.x"
+  commerce_admin_order_advanced:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  commerce_add_to_cart_confirmation:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  commerce_checkout_progress:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  commerce_addressbook:
+    download:
+      type: "git"
+      branch: "7.x-2.x"
+  commerce_google_analytics:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  commerce_message:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  commerce_autosku:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  commerce_custom_product:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  commerce_extra_price_formatters:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+
+# Libraries
+libraries:
+  stripe:
+    directory_name: stripe-php
+    download:
+      type: get
+      url: https://github.com/stripe/stripe-php/archive/v1.18.0.zip

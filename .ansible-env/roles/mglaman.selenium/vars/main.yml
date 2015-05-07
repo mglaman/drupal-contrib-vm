@@ -1,0 +1,5 @@
+---
+selenium_url: http://selenium-release.storage.googleapis.com/2.45/selenium-server-standalone-2.45.0.jar
+selenium_port: 4444
+selenium_dir: /opt/selenium
+tmp_dir: "{{ selenium_dir }}/tmp"

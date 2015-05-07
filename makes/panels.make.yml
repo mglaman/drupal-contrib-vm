@@ -1,0 +1,29 @@
+api: 2
+core: 7.x
+
+projects:
+  drupal:
+    type: "core"
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  ctools:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  panels:
+    download:
+      type: "git"
+      branch: "7.x-3.x"
+  panelizer:
+    download:
+      type: "git"
+      branch: "7.x-3.x"
+  fieldable_panels_panes:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  user_pages:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
