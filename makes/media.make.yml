@@ -1,0 +1,42 @@
+---
+api: "2"
+core: "7.x"
+
+projects:
+  drupal:
+    type: "core"
+  ctools:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  multiform:
+    download:
+      type: "git"
+      branch: "7.x-1.x"
+  plupload:
+      download:
+        type: "git"
+        branch: "7.x-1.x"
+  # Main Modules
+  file_entity:
+    download:
+      type: "git"
+      branch: "7.x-2.x"
+  media:
+    download:
+      type: "git"
+      branch: "7.x-2.x"
+  # Modules that extend Media @link: https://groups.drupal.org/node/168009
+  media_youtube:
+    download:
+      type: "git"
+      branch: "7.x-2.x"
+  media_vimeo:
+    download:
+      type: "git"
+      branch: "7.x-2.x"
+  # Views
+  views:
+    download:
+      type: "git"
+      branch: "7.x-3.x"

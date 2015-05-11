@@ -1,5 +1,24 @@
 #!/bin/bash
 
+drush_make_working_copy() {
+  drush make --prepare-install --working-copy --no-gitinfofile --no-cache $1 $2
+}
+
+checkout_drupalorg_repo() {
+  dir=$1
+  project=$2
+  branch=$3
+
+  REPO_DIR=$dir/$project
+
+  # Checkout or clone the repo.
+  echo -e "\033[1mChecking out latest of repository...\033[0m"
+  if [ -d $REPO_DIR ]; then
+    cd $REPO_DIR && git pull
+  else
+    git clone --branch $branch http://git.drupal.org/project/$project.git $REPO_DIR
+  fi
+}
 
 reset_makefile() {
   makefile=$1
@@ -9,7 +28,15 @@ reset_makefile() {
   sudo rm -rf sites/${siteDir}
 
   echo -e "\033[1mBuilding Make\033[0m"
-  drush make --prepare-install --working-copy --no-gitinfofile --no-cache makes/${makefile} sites/${siteDir}
+  drush_make_working_copy makes/${makefile} sites/${siteDir}
+}
+
+reset_ck2() {
+  base=$(pwd)
+  checkout_drupalorg_repo profiles commerce_kickstart 7.x-2.x
+  cd $base
+  sudo rm -rf sites/ck2
+  drush_make_working_copy profiles/commerce_kickstart/build-commerce-kickstart.make sites/ck2
 }
 
 case $1 in
@@ -18,6 +45,12 @@ case $1 in
     ;;
   "rebuild_panels")
     reset_makefile panels.make.yml panelsverse
+    ;;
+  "rebuild_media")
+    reset_makefile media.make.yml media
+    ;;
+  "rebuild_ck2")
+    reset_ck2
     ;;
   "")
     echo "Try ./tasks rebuild_commerce"
