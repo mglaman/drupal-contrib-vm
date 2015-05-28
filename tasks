@@ -49,6 +49,9 @@ case $1 in
   "rebuild_media")
     reset_makefile media.make.yml media
     ;;
+  "rebuild_d8")
+    reset_makefile drupal8.make.yml drupal8
+    ;;
   "rebuild_ck2")
     reset_ck2
     ;;
