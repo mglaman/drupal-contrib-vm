@@ -29,6 +29,12 @@ projects:
     download:
       type: "git"
       branch: "8.x-1.x"
+  physical:
+    type: "module"
+    download:
+      type: "git"
+      branch: "8.x-1.x"
+      url: "git@github.com:mglaman/physical.git"
   # Theme
   bootstrap:
     download:
