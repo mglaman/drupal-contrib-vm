@@ -9,6 +9,7 @@ mysql_databases:
   - { name: commerce }
   - { name: media }
   - { name: drupal8 }
+  - { name: mojocart }
 
 apache_vhosts:
   - {servername: "drupal7.contrib.dev", documentroot: "/var/www/drupal7"}
@@ -19,3 +20,4 @@ apache_vhosts:
   - {servername: "commerce.contrib.dev", documentroot: "/var/www/commerce"}
   - {servername: "media.contrib.dev", documentroot: "/var/www/media"}
   - {servername: "drupal8.contrib.dev", documentroot: "/var/www/drupal8"}
+  - {servername: "mojocart.contrib.dev", documentroot: "/var/www/mojocart"}
