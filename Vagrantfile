@@ -22,12 +22,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.synced_folder "./sites", "/var/www", id: "sites", type: "nfs"
 
-  # Ansible provisioner.
-  config.vm.provision "ansible" do |ansible|
-    ansible.playbook = ".ansible-env/playbook.yml"
-    ansible.inventory_path = ".ansible-env/inventory"
-    ansible.sudo = true
-#		ansible.verbose = "v"
-	end
+  config.vm.provision "shell",
+    inline: "sudo curl -s https://raw.githubusercontent.com/GetValkyrie/ansible-bootstrap/master/install-ansible.sh | /bin/sh",
+    keep_color: true
+
+  config.vm.provision "shell",
+    inline: "sudo ansible-galaxy install -r /vagrant/.ansible-env/requirements",
+    keep_color: true
+
+    # Ansible provisioner.
+  config.vm.provision "shell",
+    inline: "PYTHONUNBUFFERED=1 ANSIBLE_FORCE_COLOR=true ansible-playbook /vagrant/.ansible-env/playbook.yml -i /vagrant/.ansible-env/inventory --connection=local --sudo",
+    keep_color: true
 
 end
