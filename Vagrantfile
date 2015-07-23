@@ -23,11 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder "./sites", "/var/www", id: "sites", type: "nfs"
 
   config.vm.provision "shell",
-    inline: "sudo curl -s https://raw.githubusercontent.com/GetValkyrie/ansible-bootstrap/master/install-ansible.sh | /bin/sh",
-    keep_color: true
-
-  config.vm.provision "shell",
-    inline: "sudo ansible-galaxy install -r /vagrant/.ansible-env/requirements",
+    inline: "sudo ansible-galaxy install -f -r /vagrant/.ansible-env/requirements",
     keep_color: true
 
     # Ansible provisioner.
